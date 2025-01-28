@@ -5,6 +5,7 @@ export const useAuth = () => {
 
   const authedUser = session?.user;
 
+  // TODO: 로그아웃 하시겠습니까?
   const logout = () => signOut({ callbackUrl: "/login" });
 
   const loginGoogle = () => signIn("google", { callbackUrl: "/" });

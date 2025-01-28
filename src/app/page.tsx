@@ -4,9 +4,10 @@ import { useEffect, useState } from "react";
 import { redirect } from "next/navigation";
 import { useAuth } from "@/hooks/useAuth";
 import Header from "@/components/layout/Header";
+import Sidebar from "@/components/layout/Sidebar";
 
 export default function Home() {
-  const { authedUser, sessionStatus, logout } = useAuth();
+  const { authedUser, sessionStatus } = useAuth();
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -28,17 +29,11 @@ export default function Home() {
   return (
     <div className="flex flex-col min-h-screen bg-gray-100">
       <Header />
-      <section className="pt-10">
-        <h1 className="text-2xl font-bold mb-4">
-          안녕하세요, {authedUser?.name}!
+      <Sidebar />
+      <section className="pt-10 bg-customGray-100">
+        <h1 className="text-2xl font-bold text-black p-5">
+          {authedUser?.name}님의 대시보드
         </h1>
-        <p>Email: {authedUser?.email}</p>
-        <button
-          onClick={logout}
-          className="mt-4 px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600"
-        >
-          로그아웃
-        </button>
       </section>
     </div>
   );
