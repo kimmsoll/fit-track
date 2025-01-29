@@ -15,7 +15,7 @@ export default function FormHeader({ title }: Props) {
   };
 
   return (
-    <header className="w-full flex items-center justify-center bg-customGray-100 p-2 border-b border-customGray-300 fixed">
+    <header className="w-full flex items-center justify-center bg-white p-2 border-b border-customGray-300 fixed">
       <button
         className="absolute left-2 text-customGray-900"
         onClick={handleGoBack}
