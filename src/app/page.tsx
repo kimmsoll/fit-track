@@ -5,6 +5,7 @@ import { redirect } from "next/navigation";
 import { useAuth } from "@/hooks/useAuth";
 import Header from "@/components/layout/Header";
 import Sidebar from "@/components/layout/Sidebar";
+import DashboardSection from "./dashboard/components/DashboardSection";
 
 export default function Home() {
   const { authedUser, sessionStatus } = useAuth();
@@ -22,7 +23,6 @@ export default function Home() {
   }, [authedUser, sessionStatus]);
 
   if (isLoading) {
-    // TODO: Loading UI
     return <div>Loading...</div>;
   }
 
@@ -30,11 +30,7 @@ export default function Home() {
     <div className="flex flex-col min-h-screen bg-gray-100">
       <Header />
       <Sidebar />
-      <section className="pt-10 bg-customGray-100">
-        <h1 className="text-2xl font-bold text-black p-5">
-          {authedUser?.name}님의 대시보드
-        </h1>
-      </section>
+      <DashboardSection userName={authedUser?.name ?? ""} />
     </div>
   );
 }
