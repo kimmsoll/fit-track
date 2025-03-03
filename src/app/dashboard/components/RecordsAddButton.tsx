@@ -1,3 +1,4 @@
+import { ROUTES } from "@/constants/routes";
 import Link from "next/link";
 
 export default function RecordsAddButton() {
@@ -6,7 +7,7 @@ export default function RecordsAddButton() {
       <h2 className="font-bold">운동 기록 추가</h2>
       <p>기록하지 않은 운동이 있나요?</p>
       <Link
-        href="/records/add"
+        href={ROUTES.RECORDS_ADD}
         className="w-3/5 bg-customGray-900 text-white py-3 mt-4 rounded-full text-center"
       >
         추가하기

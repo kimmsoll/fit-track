@@ -1,4 +1,5 @@
 import CloseIcon from "@/components/icons/CloseIcon";
+import { ROUTES } from "@/constants/routes";
 import { useSidebar } from "@/context/SidebarContext";
 import { useAuth } from "@/hooks/useAuth";
 
@@ -30,7 +31,7 @@ export default function Sidebar() {
           <ul className="flex flex-col gap-2 mt-5">
             <li>
               <a
-                href="/"
+                href={ROUTES.HOME}
                 className="block text-black text-lg w-full p-3 transition-all hover:border-b hover:border-black"
               >
                 대시보드
@@ -38,7 +39,7 @@ export default function Sidebar() {
             </li>
             <li>
               <a
-                href="/analytics"
+                href={ROUTES.ANALYTICS}
                 className="block text-black text-lg w-full p-3 transition-all hover:border-b hover:border-black"
               >
                 분석
