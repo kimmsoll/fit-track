@@ -12,3 +12,21 @@ body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+@layer base {
+  .react-calendar {
+    @apply w-full max-w-sm bg-white rounded-lg p-4 border-none shadow-none !important;
+  }
+  .react-calendar__tile {
+    @apply rounded-full py-4 transition-all duration-200 !important;
+  }
+  .react-calendar__tile--active {
+    @apply bg-green-400 !important;
+  }
+  .react-calendar__tile:enabled:hover {
+    @apply bg-gray-200;
+  }
+  .react-calendar__month-view__weekdays__weekday > abbr {
+    @apply no-underline;
+  }
+}
