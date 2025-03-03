@@ -1,8 +1,9 @@
 import { useState } from "react";
+import { ROUTES } from "@/constants/routes";
+
 import DateInput from "./DateInput";
 import TimeSelect from "./TimeSelect";
-import { Button } from "@/components/ui/Button";
-import PlusIcon from "@/components/icons/PlusIcon";
+import AddLink from "./AddLink";
 
 export function RecordsAddOptions() {
   const [startAt, setStartAt] = useState("");
@@ -41,20 +42,7 @@ export function RecordsAddOptions() {
         </div>
       </fieldset>
 
-      <div className="w-4/5 max-w-md">
-        <Button
-          size="lg"
-          color="black"
-          title={
-            <div className="flex justify-center items-center gap-1">
-              <PlusIcon width={18} />
-              <span>운동 선택</span>
-            </div>
-          }
-          //   TODO: onCLick
-          onClick={() => {}}
-        />
-      </div>
+      <AddLink route={ROUTES.EXERCISE_SEARCH} title="운동 선택" />
     </section>
   );
 }

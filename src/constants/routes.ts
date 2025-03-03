@@ -6,4 +6,6 @@ export const ROUTES = {
   EXERCISE_SEARCH: "/exercise/search",
   EXERCISE_ADD: "/exercise/add",
   ANALYTICS: "/analytics",
-};
+} as const;
+
+export type RouteType = (typeof ROUTES)[keyof typeof ROUTES];
