@@ -3,7 +3,7 @@ import { ROUTES } from "@/constants/routes";
 
 import DateInput from "./DateInput";
 import TimeSelect from "./TimeSelect";
-import AddLink from "./AddLink";
+import AddLink from "@/components/ui/AddLink";
 
 export function RecordsAddOptions() {
   const [startAt, setStartAt] = useState("");
