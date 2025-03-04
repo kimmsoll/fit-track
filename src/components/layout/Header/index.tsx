@@ -1,3 +1,4 @@
+import Image from "next/image";
 import HamburgerMenuIcon from "@/components/icons/HamburgerMenuIcon";
 import { useSidebar } from "@/context/SidebarContext";
 import { useAuth } from "@/hooks/useAuth";
@@ -15,12 +16,12 @@ export default function Header() {
       >
         <HamburgerMenuIcon />
       </button>
-      <img
-        src={authedUser?.image ?? ""}
+      <Image
         alt="Profile Picture"
         width={24}
         height={24}
         className="rounded-full border border-customGray-900"
+        src={authedUser?.image ?? ""}
       />
     </header>
   );
